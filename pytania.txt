@@ -1,0 +1,8 @@
+Mam pytanie odnośnie paczki "passport" w NodeJs. Jak działa callback done zwrcająca:
+    1. Jeżeli użytkownik nie jest znaleziony lub jest złe hasło zwracamy  done(null, false) 
+    2. Gdy użytkownik i hasło się zgadzają z rekordem w bazie zwracamy  done(null, user)
+Funkcja zwrotna done w pakiecie "passport" w Node.js jest używana do zwracania wyniku autentykacji. Oto jak działają dwie różne wartości zwracane przez tę funkcję:
+done(null, false): Ta wartość zwracana przez funkcję done sygnalizuje, że autentykacja nie powiodła się. Może to być spowodowane nieznalezieniem użytkownika w bazie danych lub podaniem złego hasła. W takim przypadku false oznacza, że autentykacja nie powiodła się, a użytkownik nie zostanie uwierzytelniony.
+done(null, user): Gdy użytkownik i hasło zgadzają się z rekordem w bazie danych, funkcja done zwraca user, który reprezentuje zautentykowanego użytkownika. W tym przypadku user zawiera informacje o zautentykowanym użytkowniku, które mogą być wykorzystane w dalszej części aplikacji.
+W obu przypadkach pierwszy argument null oznacza brak błędu podczas autentykacji. Drugi argument określa wynik autentykacji, czy to z powodzeniem (użytkownik zwrocony) czy niepowodzeniem (wartość false). Funkcja done jest kluczowym mechanizmem w obszarze autentykacji w pakiecie "passport" i umożliwia elastyczne zarządzanie wynikami autentykacji w aplikacji Node.js.
+
